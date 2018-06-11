@@ -23,7 +23,7 @@ MV=mv
 GREP=grep
 DOXYGEN=doxygen
 
-OBJECTS=sender.o empfaenger.o
+OBJECTS=sender.o receiver.o common.o
 
 EXCLUDE_PATTERN=footrulewidth
 
@@ -42,15 +42,15 @@ EXCLUDE_PATTERN=footrulewidth
 all: sender empfaenger 
 
 sender: $(OBJECTS) 
-	$(CC) $(CFLAGS) sender.o ­lpthread –lrt -o sender
+	$(CC) $(CFLAGS) sender.o common.o ­lpthread –lrt -o sender
 
 empfaenger: $(OBJECTS) 
-	$(CC) $(CFLAGS) empfaenger.o ­lpthread –lrt -o empfaenger
+	$(CC) $(CFLAGS) receiver.o common.o ­lpthread –lrt -o empfaenger
 
 .PHONY: clean
 clean:
 	$(RM) -f *.o *~ sender
-	$(RM) -f *.o *~ empfaenger	
+	$(RM) -f *.o *~ receiver	
 
 .PHONY: distclean
 distclean: clean
