@@ -21,10 +21,12 @@
 */
 
 
+enum { SENDER, RECEIVER };
 
+//char sem_SENDER[] = "/shm_2337000";
+//char sem_RECEIVER[] = "/shm_2337001";
 
-
-
+int run (const int role, const int argc, char* argv[]);
 
 
 

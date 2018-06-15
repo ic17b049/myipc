@@ -7,7 +7,7 @@
 * @author Thomas  Neugschwandtner 	<ic17b082@technikum-wien.at>
 * @author Dominik Rychly 			<ic17b052@technikum-wien.at>
 *
-* @date 06/11/2018
+* @date 06/15/2018
 *
 * @version 1.0
 *
@@ -17,11 +17,7 @@
 * -----------------------------------------includes----------------------------------
 */
 
-
-
-
-
-
+#include "common.h"
 
 
 /**
@@ -30,22 +26,17 @@
 * \param argc the number of arguments
 * \param argv the arguments itselves (including the program name in argv[0])
 *
-* \return always "success"
-* \retval 0 always
+* \return succes 0, exit on failure
+* \retval succes 0
 */
 
 
 
+int main(int argc, char* argv[]) {  	
+	run(SENDER, argc, argv);
 
-
-
-
-
-
-
-
-
-
+	return 0;
+}
 
 
 

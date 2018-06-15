@@ -42,11 +42,9 @@ EXCLUDE_PATTERN=footrulewidth
 all: sender empfaenger 
 
 sender: $(OBJECTS) 
-	$(CC) $(CFLAGS) sender.o common.o ­lpthread –lrt -o sender
-
+	$(CC) $(CFLAGS) sender.o common.o -lpthread -lrt -o sender
 empfaenger: $(OBJECTS) 
-	$(CC) $(CFLAGS) receiver.o common.o ­lpthread –lrt -o empfaenger
-
+	$(CC) $(CFLAGS) receiver.o common.o -lpthread -lrt -o empfaenger 
 .PHONY: clean
 clean:
 	$(RM) -f *.o *~ sender
